@@ -1,0 +1,40 @@
+﻿<Window x:Class="ListyCwiczenia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListyCwiczenia"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <StackPanel>
+    <DataGrid
+        CanUserDeleteRows="False"
+                CanUserSortColumns="False"
+                RowBackground="BlueViolet"
+                AlternationCount="3"
+                AlternatingRowBackground="AliceBlue"
+                IsReadOnly="False"
+                ItemsSource="{Binding Uczniowie}"
+        >
+        
+    </DataGrid>
+        <UniformGrid Columns="2">
+            <Label Content="Podaj imię ucznia."/>
+            <TextBox x:Name="imieUczniaTextBox"/>
+            <Label Content="Podaj wiek ucznia."/>
+            <TextBox x:Name="wiekUczniaTextBox"/>
+            <Label/>
+            <CheckBox x:Name="czyPowtarzaCheckBox">
+                Czy uczeń powtarza rok?
+            </CheckBox>
+            <Label Content="Podaj zawód, w jakim kształci się uczeń."/>
+            <TextBox x:Name="zawodUczniaTextBox"/>
+            <Label/>
+            <Button Click="Button_Click">Dodaj ucznia</Button>
+        </UniformGrid>
+    
+    
+    </StackPanel>
+
+</Window>
